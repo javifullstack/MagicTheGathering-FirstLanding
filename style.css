@@ -1,0 +1,196 @@
+/* Variables de color para modo claro y oscuro */
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --accent: #b60000;
+  --card-bg: rgba(255,255,255,0.7);
+  --shadow: rgba(0,0,0,0.15);
+}
+
+/* Modo oscuro */
+[data-theme="dark"] {
+  --bg: #0d0d0f;
+  --text: #e8e8e8;
+  --accent: #ff4f4f;
+  --card-bg: rgba(25, 25, 35, 0.6);
+  --shadow: rgba(0,0,0,0.4);
+}
+
+/* Estilos globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Body con transición suave entre modos claro y oscuro */
+body {
+  background: var(--bg);
+  color: var(--text);
+  /* Suaviza la transición entre modos */
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Cabecera o header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* Navegación, aqui le di un incline-block para poder poder realizar el hover y que tuviera movimiento cada navegador. */
+.nav a {
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-left: 20px;
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.3s;
+  background: var(--card-bg);
+  border-radius: 16px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 16px var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+  padding: 20px;
+}
+
+/* Aqui el efecto hover, decidi poner un scale porque visualmente se veia mucho mejor que un transform. */
+
+.nav a:hover {
+  transform: scale(1.20);
+  box-shadow: 0 12px 30px var(--shadow);
+}
+
+/* Botón de alternar tema claro a oscuro */
+.toggle {
+  border: none;
+  background: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* Seccion hero que contiene la imagen de magic the gathering. */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 10vw;
+  animation: fadeUp 0.8s ease-in-out;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* Botón de llamada a la acción de comenzar, realmente no hace nada mas que moverse un poco con el transform. */
+.cta {
+  padding: 12px 30px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s, background 0.3s;
+}
+
+/* Efecto hover del botón de comenzar */
+.cta:hover {
+  transform: translateY(-5px);
+  background: #d00000;
+}
+
+/* Imagen dentro de la sección hero */
+.hero-image img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px var(--shadow);
+  transition: transform 0.3s;
+}
+
+/* Logo principal de magic the gathering */
+.logo img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px var(--shadow);
+  transition: transform 0.3s;
+}
+
+/* Efecto hover de la imagen principal */
+.hero-image img:hover {
+  transform: scale(1.04);
+}
+
+/* Sección de características o servicios */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 60px 10vw;
+}
+
+/* Tarjetas de características */
+.feature {
+  padding: 36px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 16px var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto hover de las tarjetas de características, con su tranform y sus sombras */
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px var(--shadow);
+}
+
+/* Pie de página */
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  opacity: 0.7;
+}
+
+/* Animación de aparición */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Diseño responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .features {
+    grid-template-columns: 1fr;
+  }
+  .nav {
+    display: none;
+  }
+}

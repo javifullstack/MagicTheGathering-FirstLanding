@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+ <!--Estructura básica de una landing page para "Magic the Gathering", le definimos modo claro para el js posterior. -->
+
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi primera landing</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!--Contiene toda la barra superior de la web.-->
+  <header class="header">
+    <div class="logo">
+        <a href="https://magic.wizards.com/en"><img src="https://media.wizards.com/2017/images/daily/41mztsnrdm.jpg" alt="Logo Magic the Gathering" width="400" height="200"></a>     
+    </div>
+
+    <!--Contiene los enlaces de la barra superior de la web donde posteriormente se podrian realizar nuevas secciones. -->
+    <nav class="nav">
+      <a href="#home">Inicio</a>
+      <a href="#services">Servicios</a>
+      <a href="#about">Acerca</a>
+      <a href="#contact">Contacto</a>
+    </nav>
+
+    <!--Botón para cambiar entre modo claro y oscuro. -->
+    <button id="themeToggle" class="toggle">🌙</button>
+  </header>
+
+    <!--Sección principal de la landing con imagen y texto de bienvenida. -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h1>Magic the Gathering</h1>
+      <p>Magic the Gathering es un juego de cartas de rol y estrategia</p>
+      <button class="cta">Comenzar</button>
+    </div>
+    
+    <!--Imagen representativa del juego, es un link a una web realmente. -->
+    <div class="hero-image">
+      <img src="https://images.ctfassets.net/s5n2t79q9icq/10hIzXVc8yZUiQ3Uu9YVRi/61c45e5b3a3db135b3400b5569c9e42d/Welocme_2.jpg?fm=webp" alt="Magic the Gathering">
+    </div>
+  </section>
+
+    <!-- Sección de características o servicios ofrecidos. -->
+  <section class="features" id="services">
+    <div class="feature">
+      <h2>Variedad de Cartas</h2>
+      <p>Explora una amplia gama de cartas con diferentes habilidades y estilos de juego.</p>
+    </div>
+    <div class="feature">
+      <h2>Eventos y Torneos</h2>
+      <p>Participa en eventos locales y torneos para poner a prueba tus habilidades.</p>
+    </div>
+    <div class="feature">
+      <h2>Comunidad Activa</h2>
+      <p>Únete a una comunidad global de jugadores apasionados por Magic the Gathering.</p>
+    </div>
+  </section>
+    <!-- Derechos reservados por su creador. -->
+  <footer class="footer" id="contact">
+    <p>&copy; 2025 Derechos reservados por Javi.</p>
+  </footer>
+
+  <!-- Enlace al archivo js llamado theme.js para el modo oscuro o modo claro. -->
+  <script src="theme.js"></script>
+</body>
+</html>
+
